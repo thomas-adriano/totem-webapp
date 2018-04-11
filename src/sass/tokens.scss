@@ -49,7 +49,7 @@
 }
 
 @mixin transition-out($attr, $timing_fn: ease) {
-  transition: $attr $transition-out-duration ease;
+  transition: $attr $transition-out-duration $timing_fn;
 }
 
 @include gen_tokens_tlbr("mar", "margin");
