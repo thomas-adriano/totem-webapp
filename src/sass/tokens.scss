@@ -1,0 +1,59 @@
+@import "~sass/variables.scss";
+
+@mixin gen_tokens_tlbr($prefix, $attr) {
+  @for $i from 1 through 5 {
+    .#{$prefix}-t-#{$i} {
+      #{$attr}-top: #{$i}0px;
+    }
+
+    .#{$prefix}-l-#{$i} {
+      #{$attr}-left: #{$i}0px;
+    }
+
+    .#{$prefix}-b-#{$i} {
+      #{$attr}-bottom: #{$i}0px;
+    }
+
+    .#{$prefix}-r-#{$i} {
+      #{$attr}-right: #{$i}0px;
+    }
+
+    .#{$prefix}-#{$i} {
+      #{$attr}: #{$i}0px;
+    }
+  }
+}
+
+@mixin gen_tokens_tlbr_owl($prefix, $attr) {
+  @for $i from 1 through 5 {
+    .#{$prefix}-t-#{$i}-owl + .#{$prefix}-t-#{$i}-owl {
+      #{$attr}-top: #{$i}0px;
+    }
+
+    .#{$prefix}-l-#{$i}-owl + .#{$prefix}-l-#{$i}-owl {
+      #{$attr}-left: #{$i}0px;
+    }
+  }
+}
+
+@mixin gen_tokens_font() {
+  @for $i from 1 through 6 {
+    .font-size-#{$i} {
+      font-size: #{$i}rem;
+    }
+  }
+}
+
+@mixin transition-in($attr, $timing_fn: ease) {
+  transition: $attr $transition-in-duration $timing_fn;
+}
+
+@mixin transition-out($attr, $timing_fn: ease) {
+  transition: $attr $transition-out-duration ease;
+}
+
+@include gen_tokens_tlbr("mar", "margin");
+@include gen_tokens_tlbr("pad", "padding");
+@include gen_tokens_tlbr_owl("mar", "margin");
+@include gen_tokens_tlbr_owl("pad", "padding");
+@include gen_tokens_font();

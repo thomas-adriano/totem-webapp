@@ -1,0 +1,14 @@
+@import "~sass/tokens.scss";
+
+.transition-test {
+  opacity: 0.2;
+  @include transition-out(opacity);
+  &:hover {
+    opacity: 1;
+    @include transition-in(opacity);
+  }
+}
+
+.app-section-with-height {
+  height: 300px;
+}

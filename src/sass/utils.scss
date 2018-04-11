@@ -1,0 +1,30 @@
+.full-viewport {
+  height: 100vh;
+  width: 100vw;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-centered-main-axis {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-centered-cross-axis {
+  display: flex;
+  align-items: center;
+}
